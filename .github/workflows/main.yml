@@ -37,8 +37,8 @@ jobs:
       
     - name: Update repository
       run: |
-        git config user.name "Your Name"
-        git config user.email "your.email@example.com"
+        git config user.name "gG3TT3Rr"
+        git config user.email "knvlvnkt@gmail.com"
         git commit -am "Update project"
         git push
         
