@@ -27,15 +27,20 @@ jobs:
         run: |
           python db.py -d -a
 
-      - name: Run tests
+      - name: Configure Git identity
         run: |
-          python test.py
+          git config --local user.email "knvlvnkt@gmail.com"
+          git config --local user.name "Nikita Konovalov"
 
-      - name: Update project code in repository
+      - name: Commit and push changes
         run: |
           git add .
           git commit -m "Update project code"
           git push
+
+      - name: Run tests
+        run: |
+          python test.py
 
       - name: Verify script execution
         run: |
