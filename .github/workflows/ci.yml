@@ -18,19 +18,20 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          node-version: '14'
+          python-version: '3.8'
 
       - name: Install dependencies
         run: |
-          npm install
-
-      - name: Build project
-        run: |
-          npm run build
+          pip install -r requirements.txt
 
       - name: Run unit tests
         run: |
-          npm test
+          python -m unittest discover
+
+      - name: Verify script execution
+        run: |
+          python script.py
+
